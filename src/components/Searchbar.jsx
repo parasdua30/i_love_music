@@ -8,8 +8,13 @@ function Searchbar() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         navigate(`/search/${searchTerm}`);
+    };
+
+    // changes
+    const handleChange = (e) => {
+        setSearchTerm(e.target.value);
+        handleSubmit(e); // Call handleSubmit whenever input changes
     };
 
     return (
@@ -19,9 +24,6 @@ function Searchbar() {
                 autoComplete="off"
                 className="p-2 text-gray-400 focus-within:text-gray-600"
             >
-                {/* <label htmlFor="What do you want to play?" className="sr-only">
-                    Search all files
-                </label> */}
                 <div className="flex flex-row justify-start items-center">
                     <FiSearch aria-hidden="true" className="w-5 h-5 ml-4" />
                     <input
@@ -32,7 +34,7 @@ function Searchbar() {
                         placeholder="What do you want to play?"
                         type="search"
                         value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
+                        onChange={handleChange} // Call handleChange on change event
                     />
                 </div>
             </form>
