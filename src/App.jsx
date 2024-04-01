@@ -1,8 +1,7 @@
 import "./App.css";
 import Sidebar from "./components/Sidebar";
 import Searchbar from "./components/Searchbar";
-import AppRouter from "./components/AppRouter.jsx";
-import { BrowserRouter as Router } from "react-router-dom";
+
 // import {
 //     RouterProvider,
 //     Route,
@@ -31,32 +30,29 @@ import { BrowserRouter as Router } from "react-router-dom";
 // );
 
 function App() {
-    return (
-        <>
-            Radhe Radhe
-            <div className="relative flex">
-                <Router>
-                    <Sidebar />
-                </Router>
-
-                <div className="flex-1 flex flex-col bg-gradient-to-br from-black to-purple-900">
-                    <Router>
-                        <Searchbar />
-                    </Router>
-
-                    <div className="px-6 h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar flex xl:flex-row flex-col-reverse">
-                        <div className="flex-1 h-fit pb-40">
-                            {/* <RouterProvider router={router} /> */}
-                            <AppRouter />
-                        </div>
-                        <div className="xl:sticky relative top-0 h-fit">
-                            {/* <TopPlay /> */}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </>
-    );
+    return <>Radhe Radhe</>;
 }
 
 export default App;
+
+// <div className="relative flex">
+//     <Router>
+//         <Sidebar />
+//     </Router>
+
+//     <div className="flex-1 flex flex-col bg-gradient-to-br from-black to-purple-900">
+//         <Router>
+//             <Searchbar />
+//         </Router>
+
+//         <div className="px-6 h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar flex xl:flex-row flex-col-reverse">
+//             <div className="flex-1 h-fit pb-40">
+//                 {/* <RouterProvider router={router} /> */}
+//                 {/* <AppRouter /> */}
+//             </div>
+//             <div className="xl:sticky relative top-0 h-fit">
+//                 {/* <TopPlay /> */}
+//             </div>
+//         </div>
+//     </div>
+// </div>;
