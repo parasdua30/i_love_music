@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
+import { Provider } from "react-redux";
 
 import {
     RouterProvider,
@@ -20,6 +20,8 @@ import {
     AroundYou,
 } from "./scenes";
 
+import { store } from "./app/store";
+
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route>
@@ -30,6 +32,7 @@ const router = createBrowserRouter(
                 <Route path="/around-you" element={<AroundYou />} />
                 <Route path="/artists/:id" element={<ArtistDetails />} />
                 <Route path="/songs/:songid" element={<SongDetails />} />
+                <Route path="/search/" element={<Discover />} />
                 <Route path="/search/:searchTerm" element={<Search />} />
             </Route>
         </Route>
@@ -38,6 +41,8 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <Provider store={store}>
+            <RouterProvider router={router} />
+        </Provider>
     </React.StrictMode>
 );

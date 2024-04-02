@@ -1,7 +1,9 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
 function Search() {
-    return <div>Search</div>;
+    const { searchTerm: toSearch } = useParams();
+    return <div className="text-white">Search: {toSearch}</div>;
 }
 
 export default Search;

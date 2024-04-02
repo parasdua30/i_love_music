@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import logo from "../assets/logo.jpeg";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import {
     HiOutlineHashtag,
@@ -36,6 +36,11 @@ const NavLinks = ({ handleClick }) => (
 
 function Sidebar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const navigate = useNavigate();
+
+    const change = () => {
+        navigate("/");
+    };
 
     return (
         <>
@@ -46,6 +51,7 @@ function Sidebar() {
                     src="https://w0.peakpx.com/wallpaper/617/577/HD-wallpaper-love-music-black-heart-hiphop-iphone-musica-music4-red-samsung.jpg"
                     alt="logo"
                     className="w-full h-15 object-contain"
+                    onClick={change}
                 />
                 <NavLinks />
             </div>
